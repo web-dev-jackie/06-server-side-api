@@ -17,3 +17,12 @@ function handleSearchFormSubmit(event) {
 }
 
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+
+function reqListener() {
+  console.log(this.responseText);
+}
+
+const req = new XMLHttpRequest();
+req.addEventListener("load", reqListener);
+req.open("GET", "api.openweathermap.org/data/2.5/onecall?lat=30.489772&lon=-99.771335");
+req.send();
